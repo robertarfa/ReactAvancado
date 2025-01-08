@@ -1,0 +1,6 @@
+@ReactAvancado.Server_HostAddress = http://localhost:5063
+
+GET {{ReactAvancado.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
