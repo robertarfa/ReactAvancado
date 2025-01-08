@@ -24,4 +24,7 @@
   <ItemGroup>
     <Folder Include="public\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".vscode\settings.json" />
+  </ItemGroup>
 </Project>
