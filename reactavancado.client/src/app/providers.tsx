@@ -1,3 +1,4 @@
+import React from 'react';
 import GlobalStyles from '@/styles/global';
 import { PropsWithChildren } from 'react';
 
