@@ -3,7 +3,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.main`
-  background-color:red,
+  background-color: red;
   color: #fff;
   width: 100%;
   height: 100%;
