@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Main = () => (
-  <main>
+  <div>
     <h1>React Avançado</h1>
-  </main>
+  </div>
 )
 
 export default Main
