@@ -15,7 +15,7 @@ jobs:
           cache: 'npm'
 
       - name: Change to project directory
-        run: cd ReactAvancado/reactavancado.client
+        run: cd ReactAvancado/ReactAvancado/reactavancado.client
 
       - name: Install dependencies
         run: npm install
