@@ -8,17 +8,18 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node in Project Directory
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
           cache: 'npm'
-
-      - name: Change to project directory
-        run: cd ReactAvancado/ReactAvancado/reactavancado.client
-
-      - name: Install dependencies
-        run: npm install
+          registry-url: 'https://registry.npmjs.org' #Optional, but good practice.
+        shell: bash
+        run: |
+          cd ReactAvancado/reactavancado.client
+          npm config set cache /home/runner/.npm
+          npm config set prefix $(pwd)/.local-npm
+          npm install
 
       - name: Linting
         run: npm run lint
