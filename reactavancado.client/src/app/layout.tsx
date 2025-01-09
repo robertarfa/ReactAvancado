@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
+import StyledComponentsRegistry from '@/lib/registry'
+import { Providers } from './providers'
 
 export const metadata: Metadata = {
     title: 'WonGames',
@@ -14,7 +17,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <div id="root">{children}</div>
+          <StyledComponentsRegistry>
+            <Providers>
+            {children}
+            </Providers>
+          </StyledComponentsRegistry>
             </body>
         </html>
     )
