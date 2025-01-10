@@ -6,14 +6,14 @@ import { env } from 'process'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// const baseFolder =
-//   env.APPDATA !== undefined && env.APPDATA !== ''
-//     ? `${env.APPDATA}/ASP.NET/https`
-//     : `${env.HOME}/.aspnet/https`
+const baseFolder =
+  env.APPDATA !== undefined && env.APPDATA !== ''
+    ? `${env.APPDATA}/ASP.NET/https`
+    : `${env.HOME}/.aspnet/https`
 
-// const certificateName = "reactavancado.client";
-// const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
-// const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
+const certificateName = 'reactavancado.client'
+const certFilePath = path.join(baseFolder, `${certificateName}.pem`)
+const keyFilePath = path.join(baseFolder, `${certificateName}.key`)
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -31,12 +31,6 @@ const nextConfig = {
         }/weatherforecast/:path*`
       }
     ]
-  },
-  serverOptions: {
-    // https: {
-    //   key: fs.readFileSync(keyFilePath),
-    //   cert: fs.readFileSync(certFilePath)
-    // }
   }
 }
 
