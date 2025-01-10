@@ -1,5 +1,5 @@
 name: ci
-on: 
+on: [pull_request]
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ReactAvancado/reactavancado.client
+        working-directory: reactavancado.client
         
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -21,12 +21,12 @@ jobs:
           
       - name: Linting
         run: npm run lint
-        working-directory: ReactAvancado/reactavancado.client
+        working-directory: reactavancado.client
 
       - name: Testing
         run: npm run test:ci
-        working-directory: ReactAvancado/reactavancado.client
+        working-directory: reactavancado.client
 
       - name: Build
         run: npm run build
-        working-directory: ReactAvancado/reactavancado.client
+        working-directory: reactavancado.client
