@@ -1,5 +1,5 @@
 name: ci
-on: 
+on: [pull_request]
 
 jobs:
   build:
@@ -8,25 +8,26 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm ci
-        working-directory: ReactAvancado/reactavancado.client
-        
+       
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
           cache: 'npm'
-          cache-dependency-path: 'ReactAvancado/reactavancado.client/package-lock.json'
-          
+          cache-dependency-path: 'reactavancado.client/package-lock.json'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: reactavancado.client
+        
       - name: Linting
         run: npm run lint
-        working-directory: ReactAvancado/reactavancado.client
+        working-directory: reactavancado.client
 
       - name: Testing
         run: npm run test:ci
-        working-directory: ReactAvancado/reactavancado.client
+        working-directory: reactavancado.client
 
       - name: Build
         run: npm run build
-        working-directory: ReactAvancado/reactavancado.client
+        working-directory: reactavancado.client
