@@ -19,7 +19,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org' #Optional, but good practice.
 
       - name: Install dependencies
-        run: npm install
+        run: cd reactavancado.client npm install
 
       - name: Linting
         run: npm run lint
