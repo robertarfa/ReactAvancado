@@ -2,23 +2,22 @@ name: ci
 on: [pull_request]
 
 jobs:
-  build:
+  update-lockfile:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: '18'
           cache: 'npm'
-
-      - name: Change to project directory
-        run: cd ReactAvancado/reactavancado.client
+          cache-dependency-path: 'ReactAvancado/reactavancado.client/package-lock.json'
 
       - name: Install dependencies
         run: npm install
+        working-directory: ReactAvancado/reactavancado.client
 
       - name: Linting
         run: npm run lint
