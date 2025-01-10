@@ -76,12 +76,8 @@ O Visual Studio Code foi configurado para facilitar o desenvolvimento e depuraç
    cd reactavancado.client
    npm install
    ```
-3. Inicie o servidor de desenvolvimento do frontend:
+3. Inicie o servidor do backend e o servidor de desenvolvimento do frontend:
    ```sh
-   npm run dev
-   ```
-4. Inicie o servidor do backend:
-   ```sh
-   cd ../ReactAvancado.Server
+   cd ReactAvancado.Server
    dotnet run
    ```
