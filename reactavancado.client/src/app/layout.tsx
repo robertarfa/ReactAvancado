@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/css/bootstrap.css'
 import StyledComponentsRegistry from '@/lib/registry'
 import { Providers } from './providers'
 
